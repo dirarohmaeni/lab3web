@@ -61,3 +61,7 @@ Buka Browser untuk melihat hasilnya
 
 1. Buatlah form yang menampilkan dropdown menu dan listbox dengan multiple selection.
 [Buka halaman index.html](index.html)
+
+
+Buka Browser untuk melihat hasilnya
+<img src="/from dropdown.png" width="500">
