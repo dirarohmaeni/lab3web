@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Dropdown & Listbox</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ffeaf3, #fff5f8);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff0f6;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      color: #b23a48;
+      margin-bottom: 5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #f8b7c8;
+      background-color: #fff;
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 20px;
+      transition: 0.2s;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #ff99b9;
+      box-shadow: 0 0 5px rgba(255, 182, 193, 0.8);
+    }
+
+    select[multiple] {
+      height: 130px;
+    }
+
+    button {
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff91a4;
+    }
+
+    .hasil {
+      margin-top: 20px;
+      background-color: #fff5f7;
+      padding: 12px;
+      border-radius: 10px;
+      color: #a52a5a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>💗 Form Pilihan Jurusan & Mata Kuliah</h1>
+
+    <form id="myForm">
+      <!-- Dropdown Jurusan -->
+      <label for="jurusan">Pilih Jurusan:</label>
+      <select id="jurusan" name="jurusan" required>
+        <option value="" disabled selected>-- Pilih Jurusan --</option>
+        <optgroup label="Fakultas Teknik">
+          <option value="Teknik Industri">Teknik Industri</option>
+          <option value="Teknik Informatika">Teknik Informatika</option>
+          <option value="Teknik Lingkungan">Teknik Lingkungan</option>
+        </optgroup>
+        <optgroup label="Fakultas Ekonomi dan Bisnis">
+          <option value="Akuntansi">Akuntansi</option>
+          <option value="Manajemen">Manajemen</option>
+          <option value="Bisnis Digital">Bisnis Digital</option>
+        </optgroup>
+      </select>
+
+      <!-- Listbox Mata Kuliah -->
+      <label for="matkul">Pilih Mata Kuliah:</label>
+      <select id="matkul" name="matkul[]" multiple size="6">
+        <option value="Pemrograman Web">Pemrograman Web</option>
+        <option value="Sistem Informasi">Sistem Informasi</option>
+        <option value="Basis Data 2">Basis Data 2</option>
+        <option value="Jaringan Komputer">Jaringan Komputer</option>
+        <option value="Struktur Data">Struktur Data</option>
+        <option value="Algoritma & Pemrograman">Algoritma & Pemrograman</option>
+      </select>
+
+      <button type="submit">🌷 Tampilkan Hasil</button>
+
+      <div class="hasil" id="hasil">
+        Hasil pilihan akan muncul di sini 💫
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const hasil = document.getElementById('hasil');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const jurusan = document.getElementById('jurusan').value;
+      const matkul = Array.from(document.getElementById('matkul').selectedOptions)
+                          .map(opt => opt.value);
+
+      hasil.innerHTML = `
+        🎓 <strong>Jurusan:</strong> ${jurusan || '-'} <br>
+        📘 <strong>Mata Kuliah:</strong> ${matkul.length > 0 ? matkul.join(', ') : '-'}
+      `;
+    });
+  </script>
+
+</body>
+</html>
