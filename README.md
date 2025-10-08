@@ -56,7 +56,7 @@ Buka Browser untuk melihat hasilnya
 <img src="/image 10.png" width="500">
 
 
-### Pertanyaan dan Tugas
+# Pertanyaan dan Tugas
 
 
 1. Buatlah form yang menampilkan dropdown menu dan listbox dengan multiple selection.
@@ -65,3 +65,4 @@ Buka Browser untuk melihat hasilnya
 
 Buka Browser untuk melihat hasilnya
 ![Tampilan Form](https://github.com/dirarohmaeni/lab3web/blob/004e6cb7fc2d935817507230808e6da75ae200a0/form%20dropdown.png)
+
